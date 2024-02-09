@@ -37,6 +37,11 @@ public class UtilisateurController {
     public UserEntity findByMailAndMotDePasse(@PathVariable String mail, @PathVariable String password) {
         return utilisateurService.FindByMailAndMotDePasse(mail, password);
     }
+        @GetMapping("/{mail}")
+    @CrossOrigin(origins = "*")
+    public  Optional<UserEntity> findByMail(@PathVariable String mail) {
+        return utilisateurService.FindByMail(mail);
+    }
 
     @GetMapping("{id}")
     @CrossOrigin(origins = "*")
