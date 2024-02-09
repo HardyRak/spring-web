@@ -22,7 +22,9 @@ public class UtilisateurService {
     public UserEntity sauvegarderUtilisateur(UserEntity utilisateur) {
         return utilisateurRepository.save(utilisateur);
     }
-
+     public Optional<UserEntity> FindByMail(String mail) {
+        return utilisateurRepository.findByMail(mail);
+     }
     public UserEntity getUtilisateurById(String id) {
         Optional<UserEntity> optionalUtilisateur = utilisateurRepository.findById(id);
         return optionalUtilisateur.orElse(null);
